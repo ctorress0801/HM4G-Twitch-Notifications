@@ -1,0 +1,155 @@
+<div class="notification-container">
+    <div class="image-container">    
+        <canvas id="myCanvas" width=1280 height=720 style="border:0px solid #ffffff;"></canvas>
+        <script>
+      	    var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            //Generate random control points
+            var pxrange = [[10,80],[700,1200],[10,80],[300,700],[10,50]];
+        	var pyrange = [[670,620],[566,506],[466,380],[340,288],[188,50]];
+        	var points  = [[200,680],[0,0],[0,0],[0,0],[0,0],[0,0],[20,-20]];
+            var i;
+        	for (i=0;i<5;i++){
+                points[(i+1)][0] = getRandomInt(parseInt(pxrange[i][0]),parseInt(pxrange[i][1]));
+            	points[(i+1)][1] = getRandomInt(parseInt(pyrange[i][1]),parseInt(pyrange[i][0]));
+        	}
+            function getRandomInt(min, max) {
+            	min = Math.ceil(min);
+            	max = Math.floor(max);
+            	return Math.floor(Math.random() * (max - min + 1)) + min;
+        	}
+            //Animation values
+            var fps = 60;
+            var percent = 0;
+            var direction = 1;
+            //Start the animation
+            setTimeout(function () {
+                requestAnimationFrame(animate);
+            }, 1930);
+            function animate() {
+                // set the animation position (0-100)
+                if (percent <101){
+                    percent += direction;
+                    draw(percent);
+                    // request another frame
+                    setTimeout(function () {
+                        requestAnimationFrame(animate);
+                    }, 1000 / fps);
+                } else {
+                    percent = 0;
+                }
+            }
+            //Draw the elements
+            function draw(sliderValue) {
+          	    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                //Draw the orb
+                var xy;
+			    if (sliderValue < 20) {
+    		        var percent = sliderValue / 20;
+    		        xy = getQuadraticBezierXYatPercent({
+                        x: parseInt(points[0][0]),
+                        y: parseInt(points[0][1])
+                    }, {
+                        x: parseInt(points[1][0]),
+                        y: parseInt(points[1][1])
+                    }, {
+                        x: (parseInt(points[1][0])+parseInt(points[2][0]))/2,
+                        y: (parseInt(points[1][1])+parseInt(points[2][1]))/2
+                    }, percent);
+                } else if (sliderValue < 40) {
+                    var percent = (sliderValue - 20) / 20;
+                    xy = getQuadraticBezierXYatPercent({
+                        x: (parseInt(points[1][0])+parseInt(points[2][0]))/2,
+                        y: (parseInt(points[1][1])+parseInt(points[2][1]))/2
+                    }, {
+                        x: parseInt(points[2][0]),
+                        y: parseInt(points[2][1])
+                    }, {
+                        x: (parseInt(points[2][0])+parseInt(points[3][0]))/2,
+                        y: (parseInt(points[2][1])+parseInt(points[3][1]))/2
+                    }, percent);
+                } else if (sliderValue < 60) {
+                    var percent = (sliderValue - 40) / 20;
+                    xy = getQuadraticBezierXYatPercent({
+                        x: (parseInt(points[2][0])+parseInt(points[3][0]))/2,
+                        y: (parseInt(points[2][1])+parseInt(points[3][1]))/2
+                    }, {
+                        x: parseInt(points[3][0]),
+                        y: parseInt(points[3][1])
+                    }, {
+                        x: (parseInt(points[3][0])+parseInt(points[4][0]))/2,
+                        y: (parseInt(points[3][1])+parseInt(points[4][1]))/2
+                    }, percent);
+                } else if (sliderValue < 80) {
+                    var percent = (sliderValue - 60) / 20;
+                    xy = getQuadraticBezierXYatPercent({
+                        x: (parseInt(points[3][0])+parseInt(points[4][0]))/2,
+                        y: (parseInt(points[3][1])+parseInt(points[4][1]))/2
+                    }, {
+                        x: parseInt(points[4][0]),
+                        y: parseInt(points[4][1])
+                    }, {
+                        x: (parseInt(points[4][0])+parseInt(points[5][0]))/2,
+                        y: (parseInt(points[4][1])+parseInt(points[5][1]))/2
+                    }, percent);
+                } else {
+                    var percent = (sliderValue - 80) / 20;
+                    xy = getQuadraticBezierXYatPercent({
+                        x: (parseInt(points[4][0])+parseInt(points[5][0]))/2,
+                        y: (parseInt(points[4][1])+parseInt(points[5][1]))/2
+                    }, {
+                        x: parseInt(points[5][0]),
+                        y: parseInt(points[5][1])
+                    }, {
+                        x: parseInt(points[6][0]),
+                        y: parseInt(points[6][1])
+                    }, percent);
+                }
+                drawOrb(xy, "cyan");
+            }
+            // draw tracking dot at xy
+            function drawOrb(point, color) {
+                ctx.fillStyle = color;
+                ctx.strokeStyle = 'rgba(0,250,250,0.1)';
+                ctx.lineWidth = 1;
+                ctx.shadowColor = '#00FFFF';
+        	    ctx.shadowBlur=20;
+                ctx.beginPath();
+                ctx.arc(point.x, point.y, 8, 0, Math.PI * 2, false);
+                ctx.closePath();
+                ctx.fill();
+                ctx.stroke();
+                ctx.strokeText(percent.toString(),-50,-50);
+            }
+            // quadratic bezier: percent is 0-1
+            function getQuadraticBezierXYatPercent(startPt, controlPt, endPt, percent) {
+                var x = Math.pow(1 - percent, 2) * startPt.x + 2 * (1 - percent) * percent * controlPt.x + Math.pow(percent, 2) * endPt.x;
+                var y = Math.pow(1 - percent, 2) * startPt.y + 2 * (1 - percent) * percent * controlPt.y + Math.pow(percent, 2) * endPt.y;
+                return ({
+                    x: x,
+                    y: y
+                });
+            }
+        </script>
+    </div>
+
+    <div class="text-container">
+        <div class="title" id="myText">
+            <script>
+                var neonn = getRandomInt(1,6);
+                function getRandomInt(min, max) {
+            	    min = Math.ceil(min);
+            	    max = Math.floor(max);
+            	    return Math.floor(Math.random() * (max - min + 1)) + min;
+        	    }
+                document.getElementById('myText').innerHTML = '<img src="{image}" width="138" height="63"><span class="keyword'+neonn+' name">{name}</span> is now following you!';
+            </script>
+        </div>
+        <div class="subtitle">
+        </div>
+    </div>
+    <div class="tts">
+    </div>
+    <audio src='{audio}'></audio>
+</div>
+<!--HM4G/Ctorres0801 April 2020-->

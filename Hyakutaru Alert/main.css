@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+#notification {
+  font-family: 'Roboto';
+  font-size: 24px;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+}
+
+#notification .image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.subtitle {
+  font-size: 24px;
+  color: #FFFFFF;
+}
+
+.video {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.title {
+  color: #FFFFFF;
+}
+
+.text-container {
+  position: fixed;
+  top: 630px;
+  left: 160px;
+  text-shadow: 0px 0px 1px #000000, 0px 0px 2px #000000, 0px 0px 3px #000000, 0px 0px 4px #000000, 0px 0px 5px #000000;
+}
+
+.tts {
+  display: none;
+}
+
+.keyword1:not(.user_message) {
+  font-family: 'Press Start 2P';
+  font-size: 1em;
+  color: #FF1177;
+}
+/*Special thanks to*/
+/*spriters-resource.com and Gussprint for the sprites*/
+/*HM4G/Ctorress0801 April 2020*/
