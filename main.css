@@ -210,16 +210,16 @@
     width: 196px;
     height: 106px;
     animation-name: AnBalArmRight1;
-    animation-duration: 5s;
+    animation-duration: 7s;
 }
 
 @keyframes AnBalArmRight1{
     0%  {left:-20px; top:595px;transform: rotate(40deg);}/*0-*/
    10%  {left:-20px; top:595px;transform: rotate(40deg);}/*1-*/
-   25%  {left:-20px; top:595px;transform: rotate(40deg);}/*2*/
-   30%  {left:-20px; top:595px;transform: rotate(40deg);}/*3*/
-   55%  {left:-20px; top:595px;transform: rotate(40deg);}/*3*/
-   70%  {left:-20px; top:595px;transform: rotate(40deg);}/*3*/
+   28%  {left:-18px; top:595px;transform: rotate(38deg);}/*2*/
+   33%  {left:-23px; top:595px;transform: rotate(42deg);}/*3*/
+   55%  {left:-23px; top:595px;transform: rotate(42deg);}/*3*/
+   70%  {left:-23px; top:595px;transform: rotate(42deg);}/*3*/
    85%  {left:-20px; top:595px;transform: rotate(40deg);}/*6*/
    100% {left:-20px; top:595px;transform: rotate(40deg);}/*7*/
 }
@@ -229,12 +229,19 @@
     width: 196px;
     height: 106px;
     animation-name: AnBalArmRight2;
-    animation-duration: 5s;
+    animation-duration: 7s;
 }
 
 @keyframes AnBalArmRight2{
-   0%  {left:50px; top:570px;transform: rotate(270deg);}
-  100% {left:50px; top:570px;transform: rotate(270deg);}
+
+    0%  {left:50px; top:570px;transform: rotate(-90deg);}/*0-*/
+   10%  {left:50px; top:570px;transform: rotate(-90deg);}/*1-*/
+   28%  {left:60px; top:570px;transform: rotate(-80deg);}/*2*/
+   33%  {left:40px; top:570px;transform: rotate(-100deg);}/*3*/
+   55%  {left:40px; top:570px;transform: rotate(-100deg);}/*3*/
+   70%  {left:40px; top:570px;transform: rotate(-100deg);}/*3*/
+   85%  {left:50px; top:570px;transform: rotate(-90deg);}/*6*/
+   100% {left:50px; top:570px;transform: rotate(-90deg);}/*7*/
 }
 
 .BalHandRight{
@@ -242,12 +249,18 @@
     width: 152px;
     height: 130px;
     animation-name: AnBalHandRight;
-    animation-duration: 5s;
+    animation-duration: 7s;
 }
 
 @keyframes AnBalHandRight{
-   0%  {left:40px; top:400px;transform: rotate(270deg);}
-  100% {left:40px; top:400px;transform: rotate(270deg);}
+    0%  {left:35px; top:400px;transform: rotate(-90deg);}/*0-*/
+   10%  {left:35px; top:400px;transform: rotate(-90deg);}/*1-*/
+   28%  {left:75px; top:395px;transform: rotate(-80deg);}/*2*/
+   33%  {left:-5px; top:410px;transform: rotate(-100deg);}/*3*/
+   55%  {left:-7px; top:412px;transform: rotate(-102deg);}/*3*/
+   70%  {left:-5px; top:410px;transform: rotate(-100deg);}/*3*/
+   85%  {left:35px; top:400px;transform: rotate(-90deg);}/*6*/
+   100% {left:35px; top:400px;transform: rotate(-90deg);}/*7*/
 }
 
 .BalHandRightRing{
@@ -255,10 +268,18 @@
     width: 60px;
     height: 92px;
     animation-name: AnBalHandRightRing;
-    animation-duration: 5s;
+    animation-duration: 7s;
 }
 
 @keyframes AnBalHandRightRing{
-   0%  {left:100px; top:500px;transform: rotate(270deg);}
-  100% {left:100px; top:500px;transform: rotate(270deg);}
+    0%  {left:105px; top:500px;transform: rotate(-93deg);}/*0-*/
+   10%  {left:105px; top:500px;transform: rotate(-93deg);}/*1-*/
+   28%  {left:130px; top:498px;transform: rotate(-82deg);}/*2*/
+   33%  {left:80px; top:505px;transform: rotate(-105deg);}/*3*/
+   44%  {left:83px; top:505px;transform: rotate(-105deg);}/*3*/
+   55%  {left:80px; top:505px;transform: rotate(-105deg);}/*3*/
+   66%  {left:83px; top:505px;transform: rotate(-105deg);}/*3*/
+   70%  {left:80px; top:505px;transform: rotate(-105deg);}/*3*/
+   85%  {left:105px; top:500px;transform: rotate(-93deg);}/*6*/
+   100% {left:105px; top:500px;transform: rotate(-93deg);}/*7*/
 }
