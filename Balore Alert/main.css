@@ -49,7 +49,10 @@
   color: #FF9F9F;
 }
 
+/*position: fixed is used so we can overlap images*/
+/*All images are set to double the resolution*/
 /*Body--------------------------------------------------------------------Body*/
+/*We set the body position in a fixed position at the bottom left*/
 .BalBody{
     position: fixed;
     top:494px;
@@ -282,4 +285,193 @@
    70%  {left:80px; top:505px;transform: rotate(-105deg);}/*3*/
    85%  {left:105px; top:500px;transform: rotate(-93deg);}/*6*/
    100% {left:105px; top:500px;transform: rotate(-93deg);}/*7*/
+}
+/*Laser------------------------------------------------------------------Laser*/
+.Las0{
+    position: fixed;
+    width: 26px;
+    height: 26px;
+    animation-name: AnLas0;
+    animation-duration: 7s;
+}
+
+@keyframes AnLas0{
+
+}
+
+.Las1{
+    position: fixed;
+    width: 26px;
+    height: 26px;
+    animation-name: AnLas1;
+    animation-duration: 7s;
+}
+
+@keyframes AnLas1{
+    0%  {left:160px; top:555px; opacity: 0.0;}/*0-*/
+   10%  {left:160px; top:555px; opacity: 0.0;}/*1-*/
+   12%  {opacity: 0.1; transform:scale(0.2,0.2);}/*-*/
+   14%  {opacity: 0.6;}/*+*/
+   16%  {opacity: 0.1;}/*-*/
+   18%  {opacity: 0.6;}/*+*/
+   20%  {opacity: 0.1;}/*-*/
+   22%  {opacity: 0.6;}/*+*/
+   24%  {opacity: 0.1;}/*-*/
+   26%  {opacity: 0.6;}/*+*/
+   28%  {opacity: 0.1;}/*-*/
+   30%  {opacity: 0.8;} /*+*/
+   31%  {left:173px; top:558px; opacity: 0.8; transform:scale(8,8);}/*+*/
+   45%  {opacity: 0.0; transform:scale(1,1);}/*-*/
+   100% {opacity: 0.0;}/*7*/
+}
+
+.Las4-1{
+    position: fixed;
+    width: 94px;
+    height: 112px;
+    animation-name: AnLas4-1;
+    animation-duration: 7s;
+}
+
+@keyframes AnLas4-1{
+    0%  {left:190px; top:460px; opacity: 0.0;}/*0-*/
+   31%  {left:190px; top:460px; opacity: 0.0;}/*1-*/
+   32%  {left:190px; top:392px; opacity: 1.0; height: 180px;}/*-*/
+   40%  {left:190px; top:460px; opacity: 1.0; height: 112px;}
+   60%  {left:190px; top:460px; opacity: 1.0; height: 112px;}
+   85%  {left:190px; top:572px; opacity: 1.0; height: 0px;}
+   90%  {left:190px; top:460px; opacity: 1.0; height: 0px;}/*-*/
+   100% {left:190px; top:460px; opacity: 0.5; height: 0px;}/*-*/
+    
+}
+
+.Las4-2{
+    position: fixed;
+    width: 94px;
+    height: 112px;
+    transform: scaleY(-1);/*put the sprite upside down*/
+    animation-name: AnLas4-2;
+    animation-duration: 7s;
+}
+
+@keyframes AnLas4-2{
+    0%  {left:190px; top:571px; opacity: 0.0;}/*0-*/
+   31%  {left:190px; top:571px; opacity: 0.0;}/*1-*/
+   32%  {left:190px; top:571px; opacity: 1.0; height: 180px;}/*-*/
+   40%  {left:190px; top:571px; opacity: 1.0; height: 112px;}/*-*/
+   60%  {left:190px; top:571px; opacity: 1.0; height: 112px;}/*-*/
+   85%  {left:190px; top:571px; opacity: 1.0; height: 0px;}
+   90%  {left:190px; top:571px; opacity: 1.0; height: 0px;}/*-*/
+   100% {left:190px; top:571px; opacity: 0.5; height: 0px;}/*-*/
+    
+}
+
+.Las5-1{
+    position: fixed;
+    width: 1280px;
+    height: 112px;
+    animation-name: AnLas5-1;
+    animation-duration: 7s;
+}
+
+@keyframes AnLas5-1{
+    0%  {left:280px; top:460px; opacity: 0.0;}/*0-*/
+   31%  {left:280px; top:460px; opacity: 0.0;}/*1-*/
+   32%  {left:280px; top:392px; opacity: 1.0; height: 180px;}/*-*/
+   40%  {left:280px; top:460px; opacity: 1.0; height: 112px;}
+   60%  {left:280px; top:460px; opacity: 1.0; height: 112px;}
+   85%  {left:280px; top:572px; opacity: 1.0; height: 0px;}
+   100% {left:280px; top:460px; opacity: 1.0; height: 0px;}/*-*/
+}
+
+.Las5-2{
+    position: fixed;
+    width: 1280px;
+    height: 112px;
+    transform: scaleY(-1);
+    animation-name: AnLas5-2;
+    animation-duration: 7s;
+}
+
+@keyframes AnLas5-2{
+    0%  {left:280px; top:571px; opacity: 0.0;}/*0-*/
+   31%  {left:280px; top:571px; opacity: 0.0;}/*1-*/
+   32%  {left:280px; top:571px; opacity: 1.0; height: 180px;}/*-*/
+   40%  {left:280px; top:571px; opacity: 1.0; height: 112px;}/*-*/
+   60%  {left:280px; top:571px; opacity: 1.0; height: 112px;}/*-*/
+   85%  {left:280px; top:571px; opacity: 1.0; height: 0px;}
+   100% {left:280px; top:571px; opacity: 0.0; height: 0px;}/*-*/
+}
+
+.Las6-1{
+    position: fixed;
+    width: 48px;
+    height: 138px;
+    animation-name: AnLas6-1;
+    animation-duration: 0.3s;
+    animation-delay: 2.5s;
+    animation-iteration-count: 6;
+    left:-280px;
+}
+
+@keyframes AnLas6-1{
+    0%  {left:280px; top:430px; opacity: 0.0;}/*0-*/
+    1%  {opacity: 1.0;}/*0-*/
+   95%  {opacity: 1.0;}
+   100% {left:1400px; top:430px; opacity: 0.0;}/*-*/
+}
+
+.Las6-2{
+    position: fixed;
+    width: 48px;
+    height: 138px;
+    transform: scaleY(-1);
+    animation-name: AnLas6-2;
+    animation-duration: 0.3s;
+    animation-delay: 2.5s;
+    animation-iteration-count: 6;
+    left:-280px;
+}
+
+@keyframes AnLas6-2{
+    0%  {left:280px; top:575px; opacity: 0.0;}/*0-*/
+    1%  {opacity: 1.0;}/*0-*/
+   95%  {opacity: 1.0;}
+   100% {left:1400px; top:575px; opacity: 0.0;}/*-*/
+}
+.Las7-1{
+    position: fixed;
+    width: 48px;
+    height: 138px;
+    animation-name: AnLas7-1;
+    animation-duration: 0.3s;
+    animation-delay: 2.5s;
+    animation-iteration-count: 6;
+    left:-280px;
+}
+
+@keyframes AnLas7-1{
+    0%  {left:328px; top:430px; opacity: 0.0;}/*0-*/
+    1%  {opacity: 1.0;}/*0-*/
+   95%  {opacity: 1.0;}
+   100% {left:1448px; top:430px; opacity: 0.0;}/*-*/
+}
+
+.Las7-2{
+    position: fixed;
+    width: 48px;
+    height: 138px;
+    transform: scaleY(-1);
+    animation-name: AnLas7-2;
+    animation-duration: 0.3s;
+    animation-delay: 2.5s;
+    animation-iteration-count: 6;
+    left:-280px;
+}
+
+@keyframes AnLas7-2{
+    0%  {left:328px; top:575px; opacity: 0.0;}/*0-*/
+    1%  {opacity: 1.0;}/*0-*/
+   95%  {opacity: 1.0;}
+   100% {left:1448px; top:575px; opacity: 0.0;}/*-*/
 }
