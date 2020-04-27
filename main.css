@@ -1,0 +1,264 @@
+#notification {
+  font-family: 'Roboto';
+  font-size: 24px;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+}
+
+#notification .image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.subtitle {
+  font-size: 24px;
+  color: #FFFFFF;
+}
+
+.video {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.title {
+  color: #FFFFFF;
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  text-shadow: 0px 0px 1px #000000, 0px 0px 2px #000000, 0px 0px 3px #000000, 0px 0px 4px #000000, 0px 0px 5px #000000;
+}
+
+.tts {
+  display: none;
+}
+
+.keyword:not(.user_message) {
+  color: #FF9F9F;
+}
+
+/*Body--------------------------------------------------------------------Body*/
+.BalBody{
+    position: fixed;
+    top:494px;
+    left:0px;
+    width: 232px;
+    height: 226px;
+}
+/*Left Arm------------------------------------------------------------Left Arm*/
+.BalArmLeft1{
+    position: fixed;
+    width: 240px;
+    height: 122px;
+    animation-name: AnBalArmLeft1;
+    animation-duration: 7s;
+}
+
+@keyframes AnBalArmLeft1{
+    0%  {left:130px; top:532px;transform: rotate(60deg);}/*0-*/
+   10%  {left:130px; top:532px;transform: rotate(60deg);}/*1-*/
+   25%  {left:100px; top:540px;transform: rotate(80deg);}/*2*/
+   30%  {left:145px; top:532px;transform: rotate(50deg);}/*3*/
+   55%  {left:145px; top:532px;transform: rotate(50deg);}/*3*/
+   70%  {left:145px; top:532px;transform: rotate(50deg);}/*3*/
+   85%  {left:130px; top:532px;transform: rotate(60deg);}/*6*/
+   100% {left:130px; top:532px;transform: rotate(60deg);}/*7*/
+}
+
+.BalArmLeft2{
+    position: fixed;
+    width: 122px;
+    height: 96px;
+    animation-name: AnBalArmLeft2;
+    animation-duration: 7s;
+}
+
+@keyframes AnBalArmLeft2{
+    0%  {left:270px; top:624px;transform: rotate(0deg);}/*0-*/
+   10%  {left:270px; top:624px;transform: rotate(0deg);}/*1-*/
+   25%  {left:200px; top:614px;transform: rotate(-60deg);}/*2*/
+   30%  {left:290px; top:614px;transform: rotate(10deg);}/*3*/
+   55%  {left:290px; top:614px;transform: rotate(10deg);}/*3*/
+   70%  {left:290px; top:614px;transform: rotate(10deg);}/*3*/
+   85%  {left:270px; top:624px;transform: rotate(0deg);}/*6*/
+   100% {left:270px; top:624px;transform: rotate(0deg);}/*7*/
+}
+.BalHandLeftRing{
+    position: fixed;
+    width: 82px;
+    height: 96px;
+    animation-name: AnBalHandLeftRing;
+    animation-duration: 7s;
+}
+
+@keyframes AnBalHandLeftRing{
+    0%  {left:340px; top:625px;transform: rotate(-20deg);}/*0-*/
+   10%  {left:340px; top:625px;transform: rotate(-20deg);}/*1-*/
+   25%  {left:250px; top:570px;transform: rotate(-70deg);}/*2*/
+   30%  {left:360px; top:625px;transform: rotate(0deg);}/*3*/
+   55%  {left:360px; top:625px;transform: rotate(0deg);}/*3*/
+   70%  {left:360px; top:625px;transform: rotate(0deg);}/*3*/
+   85%  {left:340px; top:625px;transform: rotate(-20deg);}/*6*/
+   100% {left:340px; top:625px;transform: rotate(-20deg);}/*7*/
+}
+
+.BalHandLeft{
+    position: fixed;
+    width: 114px;
+    height: 122px;
+    animation-name: AnBalHandLeft;
+    animation-duration: 7s;
+}
+
+@keyframes AnBalHandLeft{
+    0%  {left:355px; top:597px;transform: rotate(-20deg);}/*0-*/
+   10%  {left:355px; top:597px;transform: rotate(-20deg);}/*1-*/
+   25%  {left:250px; top:527px;transform: rotate(-70deg);}/*2*/
+   30%  {left:375px; top:610px;transform: rotate(0deg);}/*3*/
+   55%  {left:375px; top:610px;transform: rotate(0deg);}/*3*/
+   70%  {left:375px; top:610px;transform: rotate(0deg);}/*3*/
+   85%  {left:355px; top:597px;transform: rotate(-20deg);}/*6*/
+   100% {left:355px; top:597px;transform: rotate(-20deg);}/*7*/
+}
+/*Face--------------------------------------------------------------------Face*/
+.BalHeadJaw{
+    position: fixed;
+    width: 94px;
+    height: 76px;
+    animation-name: AnBalHeadJaw;
+    animation-duration: 7s;
+}
+
+@keyframes AnBalHeadJaw{
+    0%  {left:130px; top:577px;transform: rotate(10deg);}/*0-*/
+   10%  {left:130px; top:577px;transform: rotate(10deg);}/*1-*/
+   30%  {left:150px; top:585px;transform: rotate(5deg);}/*2*/
+   32%  {left:140px; top:600px;transform: rotate(15deg);}/*3*/
+   70%  {left:140px; top:600px;transform: rotate(15deg);}/*3*/
+   85%  {left:130px; top:577px;transform: rotate(10deg);}/*6*/
+   100% {left:130px; top:577px;transform: rotate(10deg);}/*7*/
+}
+
+.BalHeadEye{
+    position: fixed;
+    width: 98px;
+    height: 158px;
+    animation-name: AnBalHeadEye;
+    animation-duration: 7s;
+}
+
+@keyframes AnBalHeadEye{
+    0%  {left:100px; top:480px;transform: rotate(0deg);}/*0-*/
+   10%  {left:100px; top:480px;transform: rotate(0deg);}/*1-*/
+   30%  {left:115px; top:495px;transform: rotate(0deg);}/*2*/
+   35%  {left:115px; top:495px;transform: rotate(0deg);}/*3*/
+   70%  {left:115px; top:495px;transform: rotate(0deg);}/*3*/
+   85%  {left:100px; top:480px;transform: rotate(0deg);}/*6*/
+   100% {left:100px; top:480px;transform: rotate(0deg);}/*7*/
+}
+
+.BalHeadSkull{
+    position: fixed;
+    width: 158px;
+    height: 164px;
+    animation-name: AnBalHeadSkull;
+    animation-duration: 7s;
+}
+
+@keyframes AnBalHeadSkull{
+    0%  {left:80px; top:450px;transform: rotate(0deg);}/*0-*/
+   10%  {left:80px; top:450px;transform: rotate(0deg);}/*1-*/
+   30%  {left:95px; top:465px;transform: rotate(0deg);}/*2*/
+   35%  {left:95px; top:465px;transform: rotate(0deg);}/*3*/
+   70%  {left:95px; top:465px;transform: rotate(0deg);}/*3*/
+   85%  {left:80px; top:450px;transform: rotate(0deg);}/*6*/
+   100% {left:80px; top:450px;transform: rotate(0deg);}/*7*/
+}
+
+.BalHeadHelmet{
+    position: fixed;
+    width: 146px;
+    height: 136px;
+    animation-name: AnBalHeadHelmet;
+    animation-duration: 7s;
+}
+
+@keyframes AnBalHeadHelmet{
+    0%  {left:95px; top:445px;transform: rotate(0deg);}/*0-*/
+   10%  {left:95px; top:445px;transform: rotate(0deg);}/*1-*/
+   30%  {left:110px; top:460px;transform: rotate(0deg);}/*2*/
+   35%  {left:110px; top:460px;transform: rotate(0deg);}/*3*/
+   70%  {left:110px; top:460px;transform: rotate(0deg);}/*3*/
+   85%  {left:95px; top:445px;transform: rotate(0deg);}/*6*/
+   100% {left:95px; top:445px;transform: rotate(0deg);}/*7*/
+}
+/*Right Arm----------------------------------------------------------Right Arm*/
+.BalArmRight1{
+    position: fixed;
+    width: 196px;
+    height: 106px;
+    animation-name: AnBalArmRight1;
+    animation-duration: 5s;
+}
+
+@keyframes AnBalArmRight1{
+    0%  {left:-20px; top:595px;transform: rotate(40deg);}/*0-*/
+   10%  {left:-20px; top:595px;transform: rotate(40deg);}/*1-*/
+   25%  {left:-20px; top:595px;transform: rotate(40deg);}/*2*/
+   30%  {left:-20px; top:595px;transform: rotate(40deg);}/*3*/
+   55%  {left:-20px; top:595px;transform: rotate(40deg);}/*3*/
+   70%  {left:-20px; top:595px;transform: rotate(40deg);}/*3*/
+   85%  {left:-20px; top:595px;transform: rotate(40deg);}/*6*/
+   100% {left:-20px; top:595px;transform: rotate(40deg);}/*7*/
+}
+
+.BalArmRight2{
+    position: fixed;
+    width: 196px;
+    height: 106px;
+    animation-name: AnBalArmRight2;
+    animation-duration: 5s;
+}
+
+@keyframes AnBalArmRight2{
+   0%  {left:50px; top:570px;transform: rotate(270deg);}
+  100% {left:50px; top:570px;transform: rotate(270deg);}
+}
+
+.BalHandRight{
+    position: fixed;
+    width: 152px;
+    height: 130px;
+    animation-name: AnBalHandRight;
+    animation-duration: 5s;
+}
+
+@keyframes AnBalHandRight{
+   0%  {left:40px; top:400px;transform: rotate(270deg);}
+  100% {left:40px; top:400px;transform: rotate(270deg);}
+}
+
+.BalHandRightRing{
+    position: fixed;
+    width: 60px;
+    height: 92px;
+    animation-name: AnBalHandRightRing;
+    animation-duration: 5s;
+}
+
+@keyframes AnBalHandRightRing{
+   0%  {left:100px; top:500px;transform: rotate(270deg);}
+  100% {left:100px; top:500px;transform: rotate(270deg);}
+}
