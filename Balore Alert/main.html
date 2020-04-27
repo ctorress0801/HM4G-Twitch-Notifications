@@ -1,24 +1,5 @@
 <div class="notification-container">
   <div class="image-container">
-    <!--
-      Adding an <img> tag to this section with class="image" will give it the
-      default styling of this alert layout. You may either hardcode the image
-      URL, or use the variable "{image}" to have the URL of any image you
-      have uploaded on the Media tab automatically inserted.
-
-      For example:
-      <img class="image" src="https://mbt-user-upload.s3.amazonaws.com/uncodinatx/muxy-character.svg" />
-
-      Or
-      <img class="image" src="{image}" />
-
-      If you have uploaded a webm video instead, use the "{video}" variable inside a <video> tag to have its URL automatically inserted.
-
-      For example:
-        <video class="video" autoplay loop muted="true">
-          <source src="{video}" type="video/webm">
-        </video>
-    -->
       <img class="BalBody"          src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Balore%20Alert/Balore%20Sprites/Balore-Body.png" />
       <img class="BalArmLeft1"      src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Balore%20Alert/Balore%20Sprites/Balore-Arm-Left-1.png" />
       <img class="BalArmLeft2"      src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Balore%20Alert/Balore%20Sprites/Balore-Arm-Left-2.png" />
@@ -45,10 +26,6 @@
       <img class="Las5-2" src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Balore%20Alert/Balore%20Sprites/Laser-5.png" />
       <img class="Las6-1" src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Balore%20Alert/Balore%20Sprites/Laser-6.png" />
       <img class="Las6-2" src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Balore%20Alert/Balore%20Sprites/Laser-6.png" />
-      
-      
-      
-    
   </div>
 
   <div class="text-container">
@@ -62,28 +39,10 @@
   </div>
 
   <div class="tts">
-    <!--
-      Any text placed inside this div will be spoken using your selected
-      Text-To-Speech voice when the alert is shown. Note that by default
-      Text-To-Speech is disabled, so you will have to enable it on the Media
-      tab.
-    -->
     {tts_user_message}
   </div>
 
-  <!--
-    Adding any audio tag to your markup will play it automatically when
-    the alert is shown. Note that you should not add the 'autoplay' attribute
-    so that we can control exactly when the audio file plays. If you have
-    specified an audio alert in the Media tab (either one provided by us, or
-    a custom sound you have uploaded) you can have the source URL of that file
-    inserted automatically by using the '{audio}' variable.
-
-    For example:
-    <audio src='https://u.muxy.dev/assets/sounds/alert-sounds/Bloom.mp3'></audio>
-
-    Or
-    <audio src='{audio}'></audio>
-  -->
-  
+  <audio id='LaserCharge' src='https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Balore%20Alert/Balore%20Sounds/SDS_V2_BARO_010B_(Laser%20Charge).mp3'></audio>
+  <audio src='{audio}'></audio>
 </div>
+<!--HM4G/Ctorress0801 April 2020-->
