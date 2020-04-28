@@ -1,29 +1,36 @@
 <div class="notification-container">
-  <div id="img-content" class="image-container">
-    
-  </div>
-
   <div class="text-container">
     <div class="title">
-      <span class='keyword name'>{name}</span> has hosted you for <span id="amnt" class='keyword amount'>{amount}</span> viewers!
+      <span class='keyword name'>{name}</span> is fkn HERE! With an entire army of: <span id="amnt" class='keyword amount'>{amount}</span>
     </div>
 
     <div class="subtitle">
     </div>
   </div>
-
+  <div id="img-content" class="image-container">
+    <img class="MorTank"   src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Donald%20Morden/Donald%20Morden.gif" />
+  </div>
   <div class="tts">
   </div>
     <script>
-      var gifs = ['<img class="Di-Cokka"   src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Type%2002%20-%20Di%20Cokka/Di-Cokka.gif" />', 
-                  '<img class="Tiaf660"   src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Tiaf660/Tiaf660.gif" />',
-                  '<img class="SlugG"   src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Super%20Vehicle%20Walker%20Type%20001%20-%20Slug%20Gunner/Slug%20Gunner.gif" />',
-                  '<img class="SV001"   src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Super%20Vehicle%20001%20-%20Metal%20Slug/SV001%20Metal%20Slug.gif" />',
-                  '<img class="SV20-III"   src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/SV%20III%20Black%20Hound/SV%20III.gif" />',
-                  '<img class="RebelBiker"   src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Rebel%20Biker/Rebel%20Biker.gif" />',
-                  '<img class="PtoTank"   src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Ptolemaic%20Tank/Ptolemaic%20Tank.gif" />',
-                  '<img class="Claw-Unit"   src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Ptolemaic%20Pincer%20Unit/Claw%20Unit.gif" />',
-                  '<img class="Machinegun"   src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Ptolemaic%20Machinegun%20Unit/Machinegun%20Unit.gif" />',];
+      var gifs = ['<img class="FlyA"   src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Flying%20Soldiers/Flying%20A.gif" />', 
+                  '<img class="FlyB"   src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Flying%20Soldiers/Flying%20B.gif" />', 
+                  '<img class="FlyC"   src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Flying%20Soldiers/Flying%20C.gif" />', 
+                  '<img class="JTank"  src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Japanese%20Tank%20Soldier/Japanese%20Tank%20Soldier.gif" />', 
+                  '<img class="LVArmor"src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/LV%20Armor/LV%20Armor.gif" />', 
+                  '<img class="M15A"   src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/MLRS/M-15A.gif" />', 
+                  '<img class="GunUn"  src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Ptolemaic%20Gunner%20Unit/Gunner%20Unit.gif" />', 
+                  '<img class="MaGun"  src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Ptolemaic%20Machinegun%20Unit/Machinegun%20Unit.gif" />',
+                  '<img class="ClUn"   src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Ptolemaic%20Pincer%20Unit/Claw%20Unit.gif" />',
+                  '<img class="PtoTank"src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Ptolemaic%20Tank/Ptolemaic%20Tank.gif" />',
+                  '<img class="ReBi"   src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Rebel%20Biker/Rebel%20Biker.gif" />',
+                  '<img class="SV2III" src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/SV%20III%20Black%20Hound/SV%20III.gif" />',
+                  '<img class="SV001"  src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Super%20Vehicle%20001%20-%20Metal%20Slug/SV001%20Metal%20Slug.gif" />',
+                  '<img class="SlGun"  src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Super%20Vehicle%20Walker%20Type%20001%20-%20Slug%20Gunner/Slug%20Gunner.gif" />',
+                  '<img class="Tiaf660"src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Tiaf660/Tiaf660.gif" />',
+                  '<img class="Cokka"  src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Type%2002%20-%20Di%20Cokka/Di-Cokka.gif" />',                                                                                                                         
+                  '<img class="UFO"    src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/UFO/Mini-UFO.gif" />', 
+                  ];
       var hostSize = parseInt(document.getElementById("amnt").innerHTML, 10);
       
       if(hostSize > 100){hostSize=100;}

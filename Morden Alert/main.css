@@ -16,6 +16,7 @@
 }
 
 .text-container{
+  position: static;
   text-shadow: 0px 0px 1px #000000, 0px 0px 2px #000000, 0px 0px 3px #000000, 0px 0px 4px #000000, 0px 0px 5px #000000;
 }
 
@@ -47,36 +48,138 @@
   color: #FF9F9F;
 }
 /*Images Styles--------------------------------------------------Images Styles*/
-.Di-Cokka{
+.MorTank{
     position: relative;
-    animation-name: AnDi-Cokka;
+    width: 144px;
+    height: 174;
+    animation-name: AnMorTank;
     animation-duration: 20s;
 }
-@keyframes AnDi-Cokka{
+@keyframes AnMorTank{
     0%  {left:1400px;}
-   100% {left:-1800px;}
+   100% {left:-3000px;}
 }
 
-.Tiaf660{
+.FlyA{
     position: relative;
-    transform: scaleX(-1);
-    animation-name: AnTiaf660;
+    animation-name: AnFlyA;
     animation-duration: 20s;
 }
-@keyframes AnTiaf660{
+@keyframes AnFlyA{
     0%  {left:1400px;}
    100% {left:-2200px;}
 }
 
-.SlugG{
+.FlyB{
     position: relative;
-    transform: scaleX(-1);
-    animation-name: AnSlugG;
+    animation-name: AnFlyB;
     animation-duration: 20s;
 }
-@keyframes AnSlugG{
+@keyframes AnFlyB{
+    0%  {left:1400px;}
+   100% {left:-2200px;}
+}
+
+.FlyC{
+    position: relative;
+    transform: scaleX(-1);
+    animation-name: AnFlyC;
+    animation-duration: 20s;
+}
+@keyframes AnFlyC{
     0%  {left:1400px;}
    100% {left:-1400px;}
+}
+
+.JTank{
+    position: relative;
+    animation-name: AnJTank;
+    animation-duration: 20s;
+}
+@keyframes AnJTank{
+    0%  {left:1400px;}
+   100% {left:-1400px;}
+}
+
+.LVArmor{
+    position: relative;
+    transform: scaleX(-1);
+    animation-name: AnLVArmor;
+    animation-duration: 20s;
+}
+@keyframes AnLVArmor{
+    0%  {left:1400px;}
+   100% {left:-1400px;}
+}
+
+.M15A{
+    position: relative;
+    animation-name: AnM15A;
+    animation-duration: 20s;
+}
+@keyframes AnM15A{
+    0%  {left:1400px;}
+   100% {left:-1800px;}
+}
+
+.GunUn{
+    position: relative;
+    animation-name: AnGunUn;
+    animation-duration: 20s;
+}
+@keyframes AnGunUn{
+    0%  {left:1400px;}
+   100% {left:-1400px;}
+}
+
+.MaGun{
+    position: relative;
+    animation-name: AnMaGun;
+    animation-duration: 20s;
+}
+@keyframes AnMaGun{
+    0%  {left:1400px;}
+   100% {left:-1400px;}
+}
+
+.ClUn{
+    position: relative;
+    animation-name: AnClUn;
+    animation-duration: 20s;
+}
+@keyframes AnClUn{
+    0%  {left:1400px;}
+   100% {left:-1400px;}
+}
+
+.PtoTank{
+    position: relative;
+    animation-name: AnPtoTank;
+    animation-duration: 20s;
+}
+@keyframes AnPtoTank{
+    0%  {left:1400px;}
+   100% {left:-1800px;}
+}
+
+.ReBi{
+    position: relative;
+    animation-name: AnReBi;
+    animation-duration: 20s;
+}
+@keyframes AnReBi{
+    0%  {left:1400px;}
+   100% {left:-2200px;}
+}
+
+.SV2III{
+    position: relative;
+    animation-name: AnSV2III;
+    animation-duration: 20s;
+}
+@keyframes AnSV2III{
+    0%  {left:1400px;}
+   100% {left:-1800px;}
 }
 
 .SV001{
@@ -90,53 +193,45 @@
    100% {left:-1800px;}
 }
 
-.SV20-III{
+.SlGun{
     position: relative;
-    animation-name: AnSV20-III;
+    transform: scaleX(-1);
+    animation-name: AnSlGun;
     animation-duration: 20s;
 }
-@keyframes AnSV20-III{
+@keyframes AnSlGun{
     0%  {left:1400px;}
-   100% {left:-1800px;}
+   100% {left:-1400px;}
 }
 
-.RebelBiker{
+.Tiaf660{
     position: relative;
-    animation-name: AnRebelBiker;
+    transform: scaleX(-1);
+    animation-name: AnTiaf660;
     animation-duration: 20s;
 }
-@keyframes AnRebelBiker{
+@keyframes AnTiaf660{
     0%  {left:1400px;}
    100% {left:-2200px;}
 }
 
-.PtoTank{
+.Cokka{
     position: relative;
-    animation-name: AnPtoTank;
+    animation-name: AnCokka;
     animation-duration: 20s;
 }
-@keyframes AnPtoTank{
+@keyframes AnCokka{
     0%  {left:1400px;}
    100% {left:-1800px;}
 }
 
-.Claw-Unit{
+.UFO{
     position: relative;
-    animation-name: AnClaw-Unit;
+    animation-name: AnUFO;
     animation-duration: 20s;
 }
-@keyframes AnClaw-Unit{
+@keyframes AnUFO{
     0%  {left:1400px;}
-   100% {left:-1400px;}
-}
-
-.Machinegun{
-    position: relative;
-    animation-name: AnMachinegun;
-    animation-duration: 20s;
-}
-@keyframes AnMachinegun{
-    0%  {left:1400px;}
-   100% {left:-1400px;}
+   100% {left:-1800px;}
 }
 /*HM4G/Ctorress0801 April 2020*/
