@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <div class="notification-container">
   <div class="text-container">
     <div class="title">
@@ -8,7 +9,11 @@
     </div>
   </div>
   <div id="img-content" class="image-container">
-    <img class="MorTank"   src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Donald%20Morden/Donald%20Morden.gif" />
+    <div class="Morden">
+      <span class='keyword name'>{name}<i class="glyphicon glyphicon-hand-right"></i></span>
+      <img class="MorD" src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Donald%20Morden/Morden.gif" />
+      <img class="MorT" src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/Morden%20Alert/Resources/Donald%20Morden/Morden%20Tank.gif" />
+    </div>
   </div>
   <div class="tts">
   </div>
@@ -33,7 +38,7 @@
                   ];
       var hostSize = parseInt(document.getElementById("amnt").innerHTML, 10);
       
-      if(hostSize > 100){hostSize=100;}
+      if(hostSize > 120){hostSize=120;}
       for (let i = 0; i < hostSize; i++) {
         document.getElementById("img-content").insertAdjacentHTML("afterbegin", 
         gifs[Math.round(Math.random() * (gifs.length-1))]); 
