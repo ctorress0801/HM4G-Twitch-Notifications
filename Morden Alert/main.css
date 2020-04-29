@@ -48,16 +48,26 @@
   color: #FF9F9F;
 }
 /*Images Styles--------------------------------------------------Images Styles*/
-.MorTank{
+.MorD{
+    position: static;
+}
+
+.MorT{
     position: relative;
-    width: 144px;
+    top: 62px;
+    left: -120px;
+    width: 222px;
     height: 174;
+}
+
+.Morden{
+    position: relative;
     animation-name: AnMorTank;
     animation-duration: 20s;
 }
 @keyframes AnMorTank{
     0%  {left:1400px;}
-   100% {left:-3000px;}
+   100% {left:-4000px;}
 }
 
 .FlyA{
@@ -154,6 +164,8 @@
 
 .PtoTank{
     position: relative;
+    width: 118px;
+    height: 96;
     animation-name: AnPtoTank;
     animation-duration: 20s;
 }
