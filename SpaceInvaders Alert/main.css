@@ -1,0 +1,93 @@
+#notification {
+    font-family: 'Roboto';
+    font-size: 24px;
+  }
+  
+  .image-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #notification .image {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .subtitle {
+    font-size: 24px;
+    color: #FFFFFF;
+  }
+  
+  .video {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  
+  .title {
+    color: #FFFFFF;
+  }
+  
+  .text-container {
+    position: absolute;
+    top: 30%;
+    left: 980px;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    text-shadow: 0px 0px 1px #000000, 0px 0px 2px #000000, 0px 0px 3px #000000, 0px 0px 4px #000000, 0px 0px 5px #000000;
+  }
+  
+  .tts {
+    display: none;
+  }
+  
+  .keyword:not(.user_message) {
+    color: #FF9F9F;
+  }
+  /*Space Invaders------------------------------------------------Space Invaders*/
+  .Game {
+      position: absolute;
+      width:600px ;
+      height:360px;
+      top: 360px;
+      left: 680px;
+      border-style: dotted;
+  }
+  .SpaceInvaders0 {
+      position: absolute;
+      top: 0px;
+      left: 120px;
+      width: 480px;
+      height: 60px;
+  }
+  .SpaceInvaders1 {
+      position: absolute;
+      top: 60px;
+      left: 120px;
+      width: 480px;
+      height: 60px;
+  }
+  .Space {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 600px;
+      height: 300px;
+  }
+  .Canon {
+      position: absolute;
+      top: 300px;
+      left: 0px;
+      width: 600px;
+      height: 60px;
+  }
+  
+  .CanonSprite{
+      width: 60px;
+      height: 60px;
+      border-style: dotted;
+  }
