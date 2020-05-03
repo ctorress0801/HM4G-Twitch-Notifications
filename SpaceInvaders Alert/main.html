@@ -1,0 +1,211 @@
+<div class="notification-container">
+    <div id="img-content" class="image-container">
+      <div id="Game" class="Game">
+          <div id="SpaceInvaders0" class="SpaceInvaders0"></div>
+          <div id="SpaceInvaders1" class="SpaceInvaders1"></div>
+          <div id="Space" class="Space"></div>
+          <div id="Canon" class="Canon"></div>
+      </div>
+    </div>
+  
+    <div class="text-container">
+      <div class="title">
+        <span class='keyword name'>{name}</span> Cheered! {bit_image} x<span id="amnt" class='keyword amount'>{amount}</span>
+      </div>
+  
+      <div class="subtitle">
+        <span class='keyword user_message'>{user_message}</span>
+      </div>
+    </div>
+  
+    <div class="tts">
+      {tts_user_message}
+    </div>
+  
+  
+      <script>
+          //Space Invaders------------------------------------------Space Invaders
+          sprites = [ ['GrCrab1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/GrCrab1.png'], 
+                      ['GrCrab2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/GrCrab2.png'],
+                      ['GrOctopus1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/GrOctopus1.png'], 
+                      ['GrOctopus2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/GrOctopus2.png'], 
+                      ['GrSquid1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/GrSquid1.png'], 
+                      ['GrSquid2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/GrSquid2.png'], 
+                      ['OrCrab1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/OrCrab1.png'], 
+                      ['OrCrab2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/OrCrab2.png'], 
+                      ['OrOctopus1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/OrOctopus1.png'], 
+                      ['OrOctopus2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/OrOctopus2.png'], 
+                      ['OrSquid1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/OrSquid1.png'], 
+                      ['OrSquid2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/OrSquid2.png']
+          ];
+          var cheerAmount = parseInt(document.getElementById("amnt").innerHTML, 10);
+          var step = 0;//0 means position, max 2
+          var direction = 0;//0 means move left, 1 means move right
+          var row0 = document.getElementById('SpaceInvaders0');
+          var row1 = document.getElementById('SpaceInvaders1');
+          var row0LPos = row0.offsetLeft;
+          var row1LPos = row1.offsetLeft;
+          var row0TPos = row0.offsetTop;
+          var row1TPos = row1.offsetTop;
+          //Create a matrix with 0 for no enemy and 1 for enemy
+          var combatZone = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
+          var hit = [0];
+          var currentPos = 0;
+          //Instructions----------------------------------------------Instructions
+          initializeGame();
+          nextFrame();
+          //Initialize Game----------------------------------------Initialize Game
+          function initializeGame(){
+              for (let i=0; i<2; i++){
+                  for(let j=0; j<8; j++){
+                      combatZone[i][j] = Math.round(Math.random());
+                  }
+              }
+              //For all the elements in the matrix add a enemy sprite if 1 or clear if 0
+              //to the corresponding enemy row
+              for (let i=0; i<2; i++){
+                  for (let j=0; j<8; j++){
+                      if(combatZone[i][j] == 1){
+                          var invaderType = Math.round(Math.random() * (sprites.length-1));
+                          document.getElementById("SpaceInvaders" + i).insertAdjacentHTML("beforeend", 
+                          '<img id="' + i + j + '" class="'+ sprites[invaderType][0] +'" src="' + sprites[invaderType][1]+'" />'); 
+                      } else {
+                          document.getElementById("SpaceInvaders" + i).insertAdjacentHTML("beforeend", 
+                          '<img id="' + i + j + '" class="clear" src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/Clear.png"></img>'); 
+                      }
+                  }
+              }
+              document.getElementById("Canon").insertAdjacentHTML("beforeend", 
+              '<img id="CanonSprite" class="CanonSprite" src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/Canon.png" />'); 
+          }
+          
+          async function nextFrame() {
+              for(let i=0; i<40; i++){
+                  await sleep(400);
+                  replaceSprite();
+                  
+                  await sleep(400);
+                  replaceSprite();
+                  moveInvaders();
+                  analizeSteps();
+                  moveCanon();
+              }
+          }
+  
+          function sleep(ms) {
+              return new Promise(resolve => setTimeout(resolve, ms));
+          }
+              
+          function replaceSprite(){
+              //For each enemy, if the class ends in 0 or 1, change the sprite to 1 or 0
+              for(let i=0; i<2; i++){
+                  for ( let j=0; j<8; j++){
+                      var SI0 = document.getElementById(i.toString() + j.toString());
+                      var spriteVer = SI0.getAttribute('class');
+                      var chars = spriteVer.split('');
+                      var spriteId = chars[chars.length-1];
+                      if ( spriteId == '1'){
+                          //Find in array element and replace with next
+                          for (let k=0; k<sprites.length; k++){
+                              if (sprites[k][0]==spriteVer){
+                                  SI0.setAttribute("src",sprites[k+1][1] );
+                                  SI0.setAttribute("class",sprites[k+1][0] );
+                                  k = sprites.length;
+                              }
+                          }
+                      }else if ( spriteId == '2'){
+                          //Find in array element and replace with previous
+                          for (let k=0; k<sprites.length; k++){
+                              if (sprites[k][0]==spriteVer){
+                                  SI0.setAttribute("src",sprites[k-1][1] );
+                                  SI0.setAttribute("class",sprites[k-1][0] );
+                                  k = sprites.length;
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+          
+          function moveInvaders(){
+              if(step<2 && direction == 0){//Move left
+                  row0.style.left = (row0.offsetLeft  - 60).toString() + "px";
+                  row1.style.left = (row1.offsetLeft  - 60).toString() + "px";
+                  step++;
+                  direction = 0;
+                  return;
+              }
+              if(step==2 && direction == 0){//move down
+                  row0.style.top = (row0.offsetTop + 60).toString() + "px";
+                  row1.style.top = (row0.offsetTop + 60).toString() + "px";
+                  direction = 1;
+                  return;
+              }
+              if(step>0 && direction == 1){//Move right
+                  row0.style.left = (row0.offsetLeft  + 60).toString() + "px";
+                  row1.style.left = (row1.offsetLeft  + 60).toString() + "px";
+                  step--;
+                  direction = 1;
+                  return;
+              }
+              if(step==0 && direction == 1){//Move down
+                  row0.style.top = (row0.offsetTop  + 60).toString() + "px";
+                  row1.style.top = (row0.offsetTop  + 60).toString() + "px";
+                  direction = 0;
+              }
+          }
+          
+          function analizeSteps(){
+              for(let i=1; i>=0; i--){
+                  for(let j=0; j<8; j++){
+                      if(combatZone[i][j] == 1){
+                          //Look ahead 2 steps 1 for movement 2 for bullet travel
+                          if(step==0 && direction == 0){//Move left
+                              var SI0 = document.getElementById(i.toString() + j.toString());
+                              hit[j+i+(i*7)] = SI0.offsetLeft-120;
+                          }
+                          if(step==1 && direction == 0){//move left 
+                              var SI0 = document.getElementById(i.toString() + j.toString());
+                              hit[j+i+(i*7)] = SI0.offsetLeft;
+                          }
+                          if(step==2 && direction == 0){//Move down
+                              var SI0 = document.getElementById(i.toString() + j.toString());
+                              hit[j+i+(i*7)] = SI0.offsetLeft+60;
+                          }
+                          moveCanon(hit[j+i+(i*7)]);
+                          return;
+                      }
+                  }
+              }
+          }
+          
+          function moveCanon(newPos){
+              //animation time = 4.4 sec
+              document.getElementById("CanonSprite").animate([
+                  { // from
+                      transform: 'translate(' + currentPos + 'px)',
+                  }, 
+                  { // to
+                      transform: 'translate(' + newPos + 'px)',
+                  }
+              ], { 
+                // timing options
+                duration: 400,
+                iterations: Infinity
+              });
+              document.getElementById("SpaceInvaders0").insertAdjacentHTML("beforeend", 
+              'moving from: ' + currentPos + ' to: ' + newPos); 
+              currentPos = newPos;
+              return;
+          }
+          
+          function shootBullet(){}
+          
+          function destroyInvader(){}
+          
+          //Developer Notes----------------------------------------Developer Notes
+          //Math.random() * (max - min) + min
+      </script>
+  
+  </div>
+  <!--HM4G/Ctorress0801 May 2020-->
