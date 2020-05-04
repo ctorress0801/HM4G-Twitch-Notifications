@@ -27,24 +27,87 @@
   
       <script>
           //Space Invaders------------------------------------------Space Invaders
-          sprites = [ ['GrCrab1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/GrCrab1.png'], 
-                      ['GrCrab2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/GrCrab2.png'],
-                      ['GrOctopus1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/GrOctopus1.png'], 
-                      ['GrOctopus2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/GrOctopus2.png'], 
-                      ['GrSquid1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/GrSquid1.png'], 
-                      ['GrSquid2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/GrSquid2.png'], 
-                      ['OrCrab1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/OrCrab1.png'], 
-                      ['OrCrab2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/OrCrab2.png'], 
-                      ['OrOctopus1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/OrOctopus1.png'], 
-                      ['OrOctopus2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/OrOctopus2.png'], 
-                      ['OrSquid1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/OrSquid1.png'], 
-                      ['OrSquid2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/OrSquid2.png']
+          sprites = [//tier0 0-5
+                    ['GyCrab1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier0/GyCrab1.png'], 
+                    ['GyCrab2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier0/GyCrab2.png'],
+                    ['GyOctopus1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier0/GyOctopus1.png'], 
+                    ['GyOctopus2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier0/GyOctopus2.png'], 
+                    ['GySquid1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier0/GySquid1.png'], 
+                    ['GySquid2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier0/GySquid2.png'],
+                    //tier1 6-23
+                    ['GrCrab1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/GrCrab1.png'], 
+                    ['GrCrab2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/GrCrab2.png'],
+                    ['GrOctopus1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/GrOctopus1.png'], 
+                    ['GrOctopus2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/GrOctopus2.png'], 
+                    ['GrSquid1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/GrSquid1.png'], 
+                    ['GrSquid2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/GrSquid2.png'], 
+                    ['OrCrab1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/OrCrab1.png'], 
+                    ['OrCrab2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/OrCrab2.png'], 
+                    ['OrOctopus1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/OrOctopus1.png'], 
+                    ['OrOctopus2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/OrOctopus2.png'], 
+                    ['OrSquid1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/OrSquid1.png'], 
+                    ['OrSquid2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/OrSquid2.png'],
+                    ['PkCrab1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/PkCrab1.png'], 
+                    ['PkCrab2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/PkCrab2.png'], 
+                    ['PkOctopus1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/PkOctopus1.png'], 
+                    ['PkOctopus2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/PkOctopus2.png'], 
+                    ['PkSquid1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/PkSquid1.png'], 
+                    ['PkSquid2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/PkSquid2.png'],
+                    //tier2 24-41
+                    ['GlCrab1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/GlCrab1.png'], 
+                    ['GlCrab2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/GlCrab2.png'],
+                    ['GlOctopus1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/GlOctopus1.png'], 
+                    ['GlOctopus2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/GlOctopus2.png'], 
+                    ['GlSquid1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/GlSquid1.png'], 
+                    ['GlSquid2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/GlSquid2.png'], 
+                    ['PkCrab1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/PkCrab1.png'], 
+                    ['PkCrab2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/PkCrab2.png'], 
+                    ['PkOctopus1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/PkOctopus1.png'], 
+                    ['PkOctopus2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/PkOctopus2.png'], 
+                    ['PkSquid1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/PkSquid1.png'], 
+                    ['PkSquid2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/PkSquid2.png'],
+                    ['WhCrab1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/WhCrab1.png'], 
+                    ['WhCrab2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/WhCrab2.png'], 
+                    ['WhOctopus1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/WhOctopus1.png'], 
+                    ['WhOctopus2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/WhOctopus2.png'], 
+                    ['WhSquid1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/WhSquid1.png'], 
+                    ['WhSquid2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/WhSquid2.png'],
+                    //tier3 42-65
+                    ['GlCrab1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/GlCrab1.png'], 
+                    ['GlCrab2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/GlCrab2.png'],
+                    ['GlOctopus1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/GlOctopus1.png'], 
+                    ['GlOctopus2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/GlOctopus2.png'], 
+                    ['GlSquid1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/GlSquid1.png'], 
+                    ['GlSquid2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/GlSquid2.png'], 
+                    ['PrCrab1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/PrCrab1.png'], 
+                    ['PrCrab2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/PrCrab2.png'], 
+                    ['PrOctopus1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/PrOctopus1.png'], 
+                    ['PrOctopus2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/PrOctopus2.png'], 
+                    ['PrSquid1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/PrSquid1.png'], 
+                    ['PrSquid2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/PrSquid2.png'],
+                    ['WhCrab1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WhCrab1.png'], 
+                    ['WhCrab2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WhCrab2.png'], 
+                    ['WhOctopus1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WhOctopus1.png'], 
+                    ['WhOctopus2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WhOctopus2.png'], 
+                    ['WhSquid1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WhSquid1.png'], 
+                    ['WhSquid2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WhSquid2.png'],
+                    ['WpCrab1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WpCrab1.png'], 
+                    ['WpCrab2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WpCrab2.png'], 
+                    ['WpOctopus1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WpOctopus1.png'], 
+                    ['WpOctopus2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WpOctopus2.png'], 
+                    ['WpSquid1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WpSquid1.png'], 
+                    ['WpSquid2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WpSquid2.png'],
           ];
-          var cheerAmount = parseInt(document.getElementById("amnt").innerHTML, 10);//100-999,1000-4999,5000-9999,10000-8
+          bullets = [
+                    ['bullet1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/bullets/bullet1.png'],
+                    ['bullet2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/bullets/bullet2.png']
+          ];
           var step = 0;//0 means current step, max 2 to each side
           var direction = 0;//0 means move left, 1 means move right
           var row0 = document.getElementById('SpaceInvaders0');
           var row1 = document.getElementById('SpaceInvaders1');
+          var tiermin = 0;
+          var tierMax = 5;
           //Create a matrix with 0 for no enemy and 1 for enemy
           var combatZone = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
           var hit = 0;
@@ -54,10 +117,30 @@
           nextFrame();
           //Initialize Game----------------------------------------Initialize Game
           function initializeGame(){
+              //Get cheer tier
+              //100-999,1000-4999,5000-9999,10000-8
+              var cheerAmount = parseInt(document.getElementById("amnt").innerHTML, 10);
+              if(1 < parseInt(cheerAmount) && parseInt(cheerAmount) < 100){
+                  tiermin = 0;
+                  tierMax = 5;
+                  document.getElementById("Space").insertAdjacentHTML("beforeend",'tier: ' +tierMax + '</br>');
+              } else if(99 < parseInt(cheerAmount) && parseInt(cheerAmount) < 500){
+                  tiermin = 6;
+                  tierMax = 23;
+                  document.getElementById("Space").insertAdjacentHTML("beforeend",'tier: ' +tierMax + '</br>');
+              } else if(499 < parseInt(cheerAmount) && parseInt(cheerAmount) < 1000){
+                  tiermin = 24;
+                  tierMax = 41;
+                  document.getElementById("Space").insertAdjacentHTML("beforeend",'tier: ' +tierMax + '</br>');
+              } else if(999 < parseInt(cheerAmount)){
+                  tiermin = 42;
+                  tierMax = 65;
+                  document.getElementById("Space").insertAdjacentHTML("beforeend",'tier: ' +tierMax + '</br>');
+              }
               //Fill the matrix with enemies
               for (let i=0; i<2; i++){
                   for(let j=0; j<8; j++){
-                      combatZone[i][j] = Math.round(Math.random());
+                      combatZone[i][j] = Math.round(getRandom(0, 1));
                   }
               }
               //For all the elements in the matrix add a enemy sprite if 1 or clear if 0
@@ -65,7 +148,7 @@
               for (let i=0; i<2; i++){
                   for (let j=0; j<8; j++){
                       if(combatZone[i][j] == 1){
-                          var invaderType = Math.round(Math.random() * (sprites.length-1));
+                          var invaderType = Math.round(getRandom(tiermin, tierMax));
                           document.getElementById("SpaceInvaders" + i).insertAdjacentHTML("beforeend", 
                           '<img id="' + i + j + '" class="'+ sprites[invaderType][0] +'" src="' + sprites[invaderType][1]+'" />'); 
                       } else {
@@ -213,19 +296,20 @@
           }
           //Show bullet animation
           async function shootBullet(shotPos, hitId){
+              var bull = Math.round(getRandom(0,1));
               Bul = document.getElementById("Bullet");
-              Bul.setAttribute("src",sprites[1][1] );
+              Bul.setAttribute("src",bullets[bull][1]);
               Bul.style.left = shotPos + "px";
               Bul.animate([
                   { // from
-                      top: '240px',easing: 'ease-out', opacity: 1
+                      top: '300px',easing: 'ease-out', opacity: 1
                   }, 
                   { // to
                       top: (document.getElementById(hitId).offsetTop).toString() + 'px',easing: 'ease-in', opacity: 0
                   }
               ], { 
                 // timing options
-                duration: 333
+                duration: 500
                 //iterations: Infinity
               });
               await sleep(333);
@@ -240,6 +324,11 @@
               Dest.setAttribute("src","https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/Clear.png" );
               Dest.setAttribute("class","clear" );
               return;
+          }
+          //Random function
+          function getRandom(min, max){
+              return Math.random() * (max - min) + min;
+              
           }
           
           //Developer Notes----------------------------------------Developer Notes
