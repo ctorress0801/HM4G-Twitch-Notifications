@@ -122,6 +122,8 @@
                     ['Wp','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WpExplosion.png']
          ];
          vsounds = ['https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sounds/Voice/GET%20READY!.mp3','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sounds/Voice/ITS%20FEVER%20TIME!.mp3']
+         shotsfx = ['https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sounds/sfx/Sample%200(shot).mp3','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sounds/sfx/Sample%203(shot).mp3'];
+         hitsfx = ['https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sounds/sfx/Sample%2026(hit).mp3','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sounds/sfx/Sample%201(hit).mp3'];
           var step = 0;//0 means current step, max 2 to each side
           var direction = 0;//0 means move left, 1 means move right
           var row0 = document.getElementById('SpaceInvaders0');
@@ -318,6 +320,9 @@
               Bul = document.getElementById("Bullet");
               Bul.setAttribute("src",bullets[bull][1]);
               Bul.style.left = shotPos + "px";
+              var shotSound = new Audio(shotsfx[Math.round(getRandom(0,1))]);
+              shotSound.volume = 0.2;
+              shotSound.play();
               Bul.animate([
                   { // from
                       top: '300px',easing: 'ease-out', opacity: 1
@@ -369,10 +374,10 @@
                             i = explosions3.length;
                         }  
                     }
-                  
                 } 
-                //Dest.setAttribute("src",explosions1[0][1] );
-                //Dest.setAttribute("class","Explosion" );
+                var hitSound = new Audio(hitsfx[Math.round(getRandom(0,1))]);
+                hitSound.volume = 0.2;
+                hitSound.play();
                 await sleep(333);
                 Dest.setAttribute("src","https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/Clear.png" );
                 Dest.setAttribute("class","clear" );
