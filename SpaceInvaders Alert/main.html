@@ -20,7 +20,7 @@
       </div>
     </div>
   
-    <div class="tts">
+    <div id="tts" class="tts">
       {tts_user_message}
     </div>
   
@@ -120,7 +120,8 @@
                     ['Pr','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/PrExplosion.png'],
                     ['Wh','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WhExplosion.png'],
                     ['Wp','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WpExplosion.png']
-          ];
+         ];
+         vsounds = ['https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sounds/Voice/GET%20READY!.mp3','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sounds/Voice/ITS%20FEVER%20TIME!.mp3']
           var step = 0;//0 means current step, max 2 to each side
           var direction = 0;//0 means move left, 1 means move right
           var row0 = document.getElementById('SpaceInvaders0');
@@ -139,7 +140,6 @@
               //Get cheer tier
               //100-999,1000-4999,5000-9999,10000-8
               var cheerAmount = parseInt(document.getElementById("amnt").innerHTML, 10);
-              cheerAmount = 1000;
               if(1 < parseInt(cheerAmount) && parseInt(cheerAmount) < 100){
                   tiermin = 0;
                   tierMax = 5;
@@ -175,18 +175,20 @@
               }
               //Add the Canon
               document.getElementById("Canon").insertAdjacentHTML("beforeend", 
-              '<img id="CanonSprite" class="CanonSprite" src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/Canon2.png" />'); 
+              '<img id="CanonSprite" class="CanonSprite" src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/Canon2.png" />');
+              document.getElementById("tts").insertAdjacentHTML("afterend", 
+              '<audio src="' + vsounds[Math.round(getRandom(0,1))] + '"></audio>'); 
           }
           //Execute next frame
           async function nextFrame() {
               for(let i=0; i<11; i++){
-                  await sleep(333);
+                  await sleep(250);
                   replaceSprite();
   
-                  await sleep(333);
+                  await sleep(250);
                   replaceSprite();
                   analizeSteps();
-                  await sleep(333);
+                  await sleep(250);
                   moveInvaders();
               }
           }
