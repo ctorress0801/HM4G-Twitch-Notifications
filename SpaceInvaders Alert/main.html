@@ -3,7 +3,9 @@
       <div id="Game" class="Game">
           <div id="SpaceInvaders0" class="SpaceInvaders0"></div>
           <div id="SpaceInvaders1" class="SpaceInvaders1"></div>
-          <div id="Space" class="Space"></div>
+          <div id="Space" class="Space">
+              <img id="Bullet" class="Bullet" src=""/>
+          </div>
           <div id="Canon" class="Canon"></div>
       </div>
     </div>
@@ -38,24 +40,21 @@
                       ['OrSquid1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/OrSquid1.png'], 
                       ['OrSquid2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/OrSquid2.png']
           ];
-          var cheerAmount = parseInt(document.getElementById("amnt").innerHTML, 10);
-          var step = 0;//0 means position, max 2
+          var cheerAmount = parseInt(document.getElementById("amnt").innerHTML, 10);//100-999,1000-4999,5000-9999,10000-8
+          var step = 0;//0 means current step, max 2 to each side
           var direction = 0;//0 means move left, 1 means move right
           var row0 = document.getElementById('SpaceInvaders0');
           var row1 = document.getElementById('SpaceInvaders1');
-          var row0LPos = row0.offsetLeft;
-          var row1LPos = row1.offsetLeft;
-          var row0TPos = row0.offsetTop;
-          var row1TPos = row1.offsetTop;
           //Create a matrix with 0 for no enemy and 1 for enemy
           var combatZone = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
-          var hit = [0];
+          var hit = 0;
           var currentPos = 0;
           //Instructions----------------------------------------------Instructions
           initializeGame();
           nextFrame();
           //Initialize Game----------------------------------------Initialize Game
           function initializeGame(){
+              //Fill the matrix with enemies
               for (let i=0; i<2; i++){
                   for(let j=0; j<8; j++){
                       combatZone[i][j] = Math.round(Math.random());
@@ -71,31 +70,33 @@
                           '<img id="' + i + j + '" class="'+ sprites[invaderType][0] +'" src="' + sprites[invaderType][1]+'" />'); 
                       } else {
                           document.getElementById("SpaceInvaders" + i).insertAdjacentHTML("beforeend", 
-                          '<img id="' + i + j + '" class="clear" src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/Clear.png"></img>'); 
+                          '<img id="' + i + j + '" class="clear" src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/Clear.png" />'); 
                       }
                   }
               }
+              //Add the Canon
               document.getElementById("Canon").insertAdjacentHTML("beforeend", 
               '<img id="CanonSprite" class="CanonSprite" src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/Canon.png" />'); 
           }
-          
+          //Execute next frame
           async function nextFrame() {
-              for(let i=0; i<40; i++){
-                  await sleep(400);
+              for(let i=0; i<11; i++){
+                  await sleep(333);
                   replaceSprite();
-                  
-                  await sleep(400);
+  
+                  await sleep(333);
                   replaceSprite();
-                  moveInvaders();
                   analizeSteps();
-                  moveCanon();
+                  await sleep(333);
+                  moveInvaders();
               }
           }
-  
+          //Delay function
           function sleep(ms) {
-              return new Promise(resolve => setTimeout(resolve, ms));
+              //Some one pls explain callback function or whatever this is
+              return new Promise(resolve => setTimeout(resolve, ms));//I still don't understand how this line works 100%! D:
           }
-              
+          //Replace enemies sprites every x ms
           function replaceSprite(){
               //For each enemy, if the class ends in 0 or 1, change the sprite to 1 or 0
               for(let i=0; i<2; i++){
@@ -126,7 +127,7 @@
                   }
               }
           }
-          
+          //Move invaders rows
           function moveInvaders(){
               if(step<2 && direction == 0){//Move left
                   row0.style.left = (row0.offsetLeft  - 60).toString() + "px";
@@ -154,61 +155,99 @@
                   direction = 0;
               }
           }
-          
+          //Analize next invaders position
           function analizeSteps(){
-              for(let i=1; i>=0; i--){
+              for(let i=1; i>=0; i--){//from 1 to 0
                   for(let j=0; j<8; j++){
                       if(combatZone[i][j] == 1){
                           //Look ahead 2 steps 1 for movement 2 for bullet travel
+                          var Enemy = document.getElementById(i.toString() + j.toString());
+                          var rect = Enemy.getBoundingClientRect();
                           if(step==0 && direction == 0){//Move left
-                              var SI0 = document.getElementById(i.toString() + j.toString());
-                              hit[j+i+(i*7)] = SI0.offsetLeft-120;
+                              hit = rect.left - 680 - 60;
                           }
                           if(step==1 && direction == 0){//move left 
-                              var SI0 = document.getElementById(i.toString() + j.toString());
-                              hit[j+i+(i*7)] = SI0.offsetLeft;
+                              hit = rect.left - 680 - 60;
                           }
                           if(step==2 && direction == 0){//Move down
-                              var SI0 = document.getElementById(i.toString() + j.toString());
-                              hit[j+i+(i*7)] = SI0.offsetLeft+60;
+                              hit = rect.left - 680;
                           }
-                          moveCanon(hit[j+i+(i*7)]);
+                          if(step==2 && direction == 1){//Move right
+                              hit = rect.left - 680 + 60;
+                          }
+                          if(step==1 && direction == 1){//move right 
+                              hit = rect.left - 680 + 60;
+                          }
+                          if(step==0 && direction == 1){//Move down
+                              hit = rect.left - 680;
+                          }
+                          //Enemy.setAttribute("src","https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/Clear.png" );
+                          //Enemy.setAttribute("class","clear" );
+                          moveCanon(hit,i.toString() + j.toString());
+                          combatZone[i][j] = 0;
                           return;
                       }
                   }
               }
           }
-          
-          function moveCanon(newPos){
+          //Move canon to next invaders position
+          async function moveCanon(newPos, hitId){
               //animation time = 4.4 sec
-              document.getElementById("CanonSprite").animate([
+              var x = document.getElementById("CanonSprite");
+              x.animate([
                   { // from
-                      transform: 'translate(' + currentPos + 'px)',
+                      left: (currentPos).toString() + 'px',easing: 'ease-out'
                   }, 
                   { // to
-                      transform: 'translate(' + newPos + 'px)',
+                      left: (newPos).toString() + 'px',easing: 'ease-in'
                   }
               ], { 
                 // timing options
-                duration: 400,
-                iterations: Infinity
+                duration: 333
+                //iterations: Infinity
               });
-              document.getElementById("SpaceInvaders0").insertAdjacentHTML("beforeend", 
-              'moving from: ' + currentPos + ' to: ' + newPos); 
+              x.style.left = newPos + "px";
               currentPos = newPos;
+              await sleep(333);
+              shootBullet(newPos, hitId);
+          }
+          //Show bullet animation
+          async function shootBullet(shotPos, hitId){
+              Bul = document.getElementById("Bullet");
+              Bul.setAttribute("src",sprites[1][1] );
+              Bul.style.left = shotPos + "px";
+              Bul.animate([
+                  { // from
+                      top: '240px',easing: 'ease-out', opacity: 1
+                  }, 
+                  { // to
+                      top: (document.getElementById(hitId).offsetTop).toString() + 'px',easing: 'ease-in', opacity: 0
+                  }
+              ], { 
+                // timing options
+                duration: 333
+                //iterations: Infinity
+              });
+              await sleep(333);
+              destroyInvader(hitId);
+          }
+          //Destroy invader and change sprite
+          async function destroyInvader(hitId){
+              Dest = document.getElementById(hitId);
+              Dest.setAttribute("src",sprites[2][2] );
+              //Dest.setAttribute("class","Explosion" );
+              await sleep(333);
+              Dest.setAttribute("src","https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/Clear.png" );
+              Dest.setAttribute("class","clear" );
               return;
           }
-          
-          function shootBullet(){}
-          
-          function destroyInvader(){}
           
           //Developer Notes----------------------------------------Developer Notes
           //Math.random() * (max - min) + min
       </script>
   
   </div>
-<!--Christopher Torres-->
-<!--https://github.com/ctorress0801-->
-<!--https://www.twitch.tv/heavym4chinegun-->
-<!--HM4G/Ctorress0801 May 2020-->
+  <!--Christopher Torres-->
+  <!--https://github.com/ctorress0801-->
+  <!--https://www.twitch.tv/heavym4chinegun-->
+  <!--HM4G/Ctorress0801 May 2020-->

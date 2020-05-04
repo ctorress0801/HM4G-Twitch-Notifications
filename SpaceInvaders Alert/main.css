@@ -53,7 +53,7 @@
     position: absolute;
     width:600px ;
     height:360px;
-    top: 360px;
+    top: 360px; /*360*/
     left: 680px;
     border-style: dotted;
 }
@@ -87,11 +87,25 @@
 }
 
 .CanonSprite{
+    position: absolute;
     width: 60px;
     height: 60px;
+    left: 0px;
+}
+.Bullet{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 0px;
+    top: 240px;
+    opacity: 0;
     border-style: dotted;
 }
-
+.Explosion{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+}
 /*Christopher Torres
 https://github.com/ctorress0801
 https://www.twitch.tv/heavym4chinegun
