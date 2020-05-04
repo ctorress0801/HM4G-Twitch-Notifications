@@ -27,7 +27,7 @@
   
       <script>
           //Space Invaders------------------------------------------Space Invaders
-          sprites = [//tier0 0-5
+        sprites = [//tier0 0-5
                     ['GyCrab1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier0/GyCrab1.png'], 
                     ['GyCrab2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier0/GyCrab2.png'],
                     ['GyOctopus1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier0/GyOctopus1.png'], 
@@ -97,10 +97,29 @@
                     ['WpOctopus2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WpOctopus2.png'], 
                     ['WpSquid1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WpSquid1.png'], 
                     ['WpSquid2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WpSquid2.png'],
-          ];
-          bullets = [
+        ];
+        bullets = [
                     ['bullet1','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/bullets/bullet1.png'],
                     ['bullet2','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/bullets/bullet2.png']
+        ];
+        explosions0 = [//tier0
+                    ['Gy','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier0/GyExplosion.png']
+        ];
+        explosions1 = [//tier1
+                    ['Gr','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/GrExplosion.png'],
+                    ['Or','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/OrExplosion.png'],
+                    ['Pk','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier1/PkExplosion.png']
+        ];
+        explosions2 = [//tier2
+                    ['Gl','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/GlExplosion.png'],
+                    ['Pk','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/PkExplosion.png'],
+                    ['Wh','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier2/WhExplosion.png']
+        ];
+        explosions3 = [//tier3
+                    ['Gl','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/GlExplosion.png'],
+                    ['Pr','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/PrExplosion.png'],
+                    ['Wh','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WhExplosion.png'],
+                    ['Wp','https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/invaders/tier3/WpExplosion.png']
           ];
           var step = 0;//0 means current step, max 2 to each side
           var direction = 0;//0 means move left, 1 means move right
@@ -120,22 +139,19 @@
               //Get cheer tier
               //100-999,1000-4999,5000-9999,10000-8
               var cheerAmount = parseInt(document.getElementById("amnt").innerHTML, 10);
+              cheerAmount = 1000;
               if(1 < parseInt(cheerAmount) && parseInt(cheerAmount) < 100){
                   tiermin = 0;
                   tierMax = 5;
-                  document.getElementById("Space").insertAdjacentHTML("beforeend",'tier: ' +tierMax + '</br>');
               } else if(99 < parseInt(cheerAmount) && parseInt(cheerAmount) < 500){
                   tiermin = 6;
                   tierMax = 23;
-                  document.getElementById("Space").insertAdjacentHTML("beforeend",'tier: ' +tierMax + '</br>');
               } else if(499 < parseInt(cheerAmount) && parseInt(cheerAmount) < 1000){
                   tiermin = 24;
                   tierMax = 41;
-                  document.getElementById("Space").insertAdjacentHTML("beforeend",'tier: ' +tierMax + '</br>');
               } else if(999 < parseInt(cheerAmount)){
                   tiermin = 42;
                   tierMax = 65;
-                  document.getElementById("Space").insertAdjacentHTML("beforeend",'tier: ' +tierMax + '</br>');
               }
               //Fill the matrix with enemies
               for (let i=0; i<2; i++){
@@ -159,7 +175,7 @@
               }
               //Add the Canon
               document.getElementById("Canon").insertAdjacentHTML("beforeend", 
-              '<img id="CanonSprite" class="CanonSprite" src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/Canon.png" />'); 
+              '<img id="CanonSprite" class="CanonSprite" src="https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/Canon2.png" />'); 
           }
           //Execute next frame
           async function nextFrame() {
@@ -286,12 +302,12 @@
                   }
               ], { 
                 // timing options
-                duration: 333
+                duration: 350
                 //iterations: Infinity
               });
               x.style.left = newPos + "px";
               currentPos = newPos;
-              await sleep(333);
+              await sleep(300);
               shootBullet(newPos, hitId);
           }
           //Show bullet animation
@@ -309,21 +325,56 @@
                   }
               ], { 
                 // timing options
-                duration: 500
+                duration: 550
                 //iterations: Infinity
               });
-              await sleep(333);
+              await sleep(250);
               destroyInvader(hitId);
           }
           //Destroy invader and change sprite
           async function destroyInvader(hitId){
-              Dest = document.getElementById(hitId);
-              Dest.setAttribute("src",sprites[2][2] );
-              //Dest.setAttribute("class","Explosion" );
-              await sleep(333);
-              Dest.setAttribute("src","https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/Clear.png" );
-              Dest.setAttribute("class","clear" );
-              return;
+                //Get explosion sprite
+                Dest = document.getElementById(hitId);
+                var DestVer = Dest.getAttribute('class');
+                var chars = DestVer.split('');
+                var DestId = chars[0]+chars[1];
+                if(tierMax == 5){
+                    Dest.setAttribute("src",explosions0[0][1] );
+                    Dest.setAttribute("class","Explosion" );
+                } else if(tierMax == 23){
+                    for(let i=0; i<explosions1.length; i++){
+                        if(DestId == explosions1[i][0]){
+                            Dest.setAttribute("src",explosions1[i][1] );
+                            Dest.setAttribute("class","Explosion" );
+                            i = explosions1.length;
+                        }  
+                    }
+                  
+                } else if(tierMax == 41){
+                    for(let i=0; i<explosions2.length; i++){
+                        if(DestId == explosions2[i][0]){
+                            Dest.setAttribute("src",explosions2[i][1] );
+                            Dest.setAttribute("class","Explosion" );
+                            i = explosions2.length;
+                        }  
+                    }
+                  
+                } else if(tierMax == 65){
+                    for(let i=0; i<explosions3.length; i++){
+                        if(DestId == explosions3[i][0]){
+                            Dest.setAttribute("src",explosions3[i][1] );
+                            Dest.setAttribute("class","Explosion" );
+                            i = explosions3.length;
+                        }  
+                    }
+                  
+                } 
+                //Dest.setAttribute("src",explosions1[0][1] );
+                //Dest.setAttribute("class","Explosion" );
+                await sleep(333);
+                Dest.setAttribute("src","https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/Clear.png" );
+                Dest.setAttribute("class","clear" );
+                return;
           }
           //Random function
           function getRandom(min, max){
