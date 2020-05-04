@@ -21,7 +21,7 @@
     </div>
   
     <div id="tts" class="tts">
-      {tts_user_message}
+      
     </div>
   
   
@@ -148,12 +148,18 @@
               } else if(99 < parseInt(cheerAmount) && parseInt(cheerAmount) < 500){
                   tiermin = 6;
                   tierMax = 23;
+                  document.getElementById("tts").insertAdjacentHTML("beforeend", 
+                  '{tts_user_message}'); 
               } else if(499 < parseInt(cheerAmount) && parseInt(cheerAmount) < 1000){
                   tiermin = 24;
                   tierMax = 41;
+                  document.getElementById("tts").insertAdjacentHTML("beforeend", 
+                          '{tts_user_message}'); 
               } else if(999 < parseInt(cheerAmount)){
                   tiermin = 42;
                   tierMax = 65;
+                  document.getElementById("tts").insertAdjacentHTML("beforeend", 
+                          '{tts_user_message}'); 
               }
               //Fill the matrix with enemies
               for (let i=0; i<2; i++){
