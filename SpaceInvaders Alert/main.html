@@ -183,7 +183,7 @@
           }
           //Execute next frame
           async function nextFrame() {
-              for(let i=0; i<11; i++){
+              for(let i=0; i<15; i++){
                   await sleep(250);
                   replaceSprite();
   
@@ -321,7 +321,7 @@
               Bul.setAttribute("src",bullets[bull][1]);
               Bul.style.left = shotPos + "px";
               var shotSound = new Audio(shotsfx[Math.round(getRandom(0,1))]);
-              shotSound.volume = 0.2;
+              shotSound.volume = 0.1;
               shotSound.play();
               Bul.animate([
                   { // from
@@ -376,7 +376,7 @@
                     }
                 } 
                 var hitSound = new Audio(hitsfx[Math.round(getRandom(0,1))]);
-                hitSound.volume = 0.2;
+                hitSound.volume = 0.1;
                 hitSound.play();
                 await sleep(333);
                 Dest.setAttribute("src","https://raw.githubusercontent.com/ctorress0801/HM4G-Twitch-Notifications/master/SpaceInvaders%20Alert/Sprites/Clear.png" );
